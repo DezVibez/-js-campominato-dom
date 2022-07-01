@@ -40,7 +40,14 @@
 }
 
 .clicked {
-    background-color: aqua;
+    background-color: grey;
+}
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
 }
 
 #point {

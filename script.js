@@ -26,19 +26,28 @@ Facciamo in modo di generare 16 numeri casuali (tutti diversi) compresi tra 1 e 
 Generiamoli e stampiamo in console per essere certi che siano corretti*/
 
 
+//genera bombe 
+let arrayBombs = []
+let arrayNumbers =[]
 
-//genera 16numeri casuali
-function getRandom16(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
 
+function bombs(cell) {
+    
+
+    while (arrayBombs.length < 16) {
+        let numberRandom = Math.floor(Math.random() * cell) + 1
+        if (!arrayBombs.includes(numberRandom)) {
+            arrayBombs.push(numberRandom)
+            }
+
+    }
+    return arrayBombs
+  
+}
 
 
 
 const pointTarget = document.getElementById("point")
-   
-
-
 
 //targhettizza bottone
 
@@ -51,46 +60,56 @@ function createCell(numerocelle) {
     cell.className = "cell"
     grid.appendChild(cell)
     
-    
-
     return cell
 }
+
 
 
 //variabili globali
 
 let cellMax = 100
 
-
 startButton.addEventListener("click", function(){
-
-    
 
     //assegno ai punti la partenza da 0
     let points = 0
     pointTarget.innerText = points
+
+    //richiamo le bombe
+    bombs(100)
+    console.log(bombs(100))
     
     //richiamo la funzione di generazione celle
     for(let i = 1; i <= cellMax; i++) {
-        const newCell = createCell(i)
+        let newCell = createCell(i)
 
-        //crea 16 bombe
-        getRandom16(1, 16)
-        console.log(getRandom16(1,16))
+        //stampa valore da 1 a 100
+        newCell.innerText = i
 
-        //stampa bombe
-        newCell.innerText = getRandom16(1,16)
+        arrayNumbers.push(i)
+        
+        
 
+       
+        
+        //ascolto il click della singola cella
 
-        newCell.addEventListener("click", function(){
+            newCell.addEventListener("click", function(){
             console.log(i)
-            newCell.classList.add("clicked")
+
+            if (arrayNumbers.includes(arrayBombs[1])) {
+                newCell.classList.add("red")
+            }
+            else newCell.classList.add("blue")
+
             
+
             //al click incremento i punti e li stampo
             points++
             pointTarget.innerText = "il tuo punteggio è " + points
 
         })
+        
     }
 
     
