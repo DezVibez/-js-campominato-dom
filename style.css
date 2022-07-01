@@ -43,8 +43,13 @@
     background-color: aqua;
 }
 
-.cell.easy
-
-.cell.normal
-
-.cell.difficult
+#point {
+    padding: 10px;
+    background-color: antiquewhite;
+    font-size: 25px;
+    border: solid 1px black;
+    margin: 0 auto;
+    width: 20%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
