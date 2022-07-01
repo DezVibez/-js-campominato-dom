@@ -20,9 +20,20 @@ Quando l'utente clicca su una cella, e questa non è una bomba, dobbiamo control
 # MILESTONE 5
 Quando la partita termina dobbiamo capire se è terminata perchè è stata cliccata una bomba o se perchè l'utente ha raggiunto il punteggio massimo. Dobbiamo poi stampare in pagina il punteggio raggiunto ed il messaggio adeguato in caso di vittoria o sconfitta.*/
 
-/*# MILESTONE 1
-Prepariamo "qualcosa" per tenere il punteggio dell'utente.
-Quando l'utente clicca su una cella, incrementiamo il punteggio.*/
+
+/*# MILESTONE 2
+Facciamo in modo di generare 16 numeri casuali (tutti diversi) compresi tra 1 e il massimo di caselle disponibili.
+Generiamoli e stampiamo in console per essere certi che siano corretti*/
+
+
+
+//genera 16numeri casuali
+function getRandom16(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
+
+
 
 const pointTarget = document.getElementById("point")
    
@@ -53,38 +64,32 @@ let cellMax = 100
 
 startButton.addEventListener("click", function(){
 
+    
 
+    //assegno ai punti la partenza da 0
     let points = 0
     pointTarget.innerText = points
     
-
-    
-
-    
-    
+    //richiamo la funzione di generazione celle
     for(let i = 1; i <= cellMax; i++) {
         const newCell = createCell(i)
 
-        
-        
+        //crea 16 bombe
+        getRandom16(1, 16)
+        console.log(getRandom16(1,16))
 
-        newCell.innerText = i
+        //stampa bombe
+        newCell.innerText = getRandom16(1,16)
 
 
         newCell.addEventListener("click", function(){
             console.log(i)
             newCell.classList.add("clicked")
             
+            //al click incremento i punti e li stampo
             points++
             pointTarget.innerText = "il tuo punteggio è " + points
 
-            
-
-
-
-
-
-            
         })
     }
 
