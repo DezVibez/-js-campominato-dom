@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 800px;
+    margin: 0 auto;
+    height: 800px;
+    border: solid 1px black;
+}
+
+#grid {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width:  100%;
+}
+
+.cell {
+    height: calc(100%/10);
+    width: calc(100%/10);
+    border: solid 1px black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#start-button {
+    padding: 10px;
+    background-color: antiquewhite;
+    font-size: 25px;
+    border: solid 1px black;
+    margin: 0 auto;
+    width: 20%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer
+}
+
+.clicked {
+    background-color: aqua;
+}
+
+.cell.easy
+
+.cell.normal
+
+.cell.difficult
