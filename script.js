@@ -28,8 +28,6 @@ Generiamoli e stampiamo in console per essere certi che siano corretti*/
 
 //genera bombe 
 let arrayBombs = []
-let arrayNumbers =[]
-
 
 function bombs(cell) {
     
@@ -86,21 +84,20 @@ startButton.addEventListener("click", function(){
         //stampa valore da 1 a 100
         newCell.innerText = i
 
-        arrayNumbers.push(i)
         
-        
-
-       
         
         //ascolto il click della singola cella
 
             newCell.addEventListener("click", function(){
             console.log(i)
 
-            if (arrayNumbers.includes(arrayBombs[1])) {
+            if (arrayBombs.includes(i)) {
                 newCell.classList.add("red")
+                alert("hai perso, hai totalizzato un punteggio di " + points)
             }
             else newCell.classList.add("blue")
+
+            
 
             
 
