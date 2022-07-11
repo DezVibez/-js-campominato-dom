@@ -68,7 +68,8 @@ function createCell(numerocelle) {
 let cellMax = 100
 
 startButton.addEventListener("click", function(){
-
+    
+    startButton.innerText = "Ricomincia"
     //assegno ai punti la partenza da 0
     let points = 0
     pointTarget.innerText = points
@@ -91,13 +92,21 @@ startButton.addEventListener("click", function(){
             newCell.addEventListener("click", function(){
             console.log(i)
 
+            if (newCell.classList.contains("clicked")){
+                return;
+            }
+
+
+
             if (arrayBombs.includes(i)) {
                 newCell.classList.add("red")
                 alert("hai perso, hai totalizzato un punteggio di " + points)
             }
             else newCell.classList.add("blue")
+                if(points = )
+                
 
-            
+
 
             
 
