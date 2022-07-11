@@ -103,7 +103,7 @@ startButton.addEventListener("click", function(){
                 alert("hai perso, hai totalizzato un punteggio di " + points)
             }
             else newCell.classList.add("blue")
-                if(points = )
+                if(points === 84) points++
                 
 
 
